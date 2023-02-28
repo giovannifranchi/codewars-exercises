@@ -163,4 +163,37 @@ function digitalRoot(n){
 
 
 
+// ----------------------------------------------
+
+// DESCRIPTION:
+// Count the number of Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string.
+//  The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+
+
+function duplicateCount(text){
+    const textArray = text.toLowerCase().split('');
+    const comparisonArray = [];
+    const duplicateArray = [];
+    let duplicate = 0;
+    for(let char of textArray){
+        if(comparisonArray.includes(char)){
+            if(!duplicateArray.includes(char)){
+                duplicate = duplicate + 1
+                duplicateArray.push(char);
+            }
+        }else {
+            comparisonArray.push(char);
+        }
+    }
+    return duplicate;
+}
+
+// let stroo = "aabBcde";
+
+// let result = duplicateCount(stroo);
+
+// console.log(result);
+
 
