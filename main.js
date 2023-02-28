@@ -131,8 +131,35 @@ function howManyYears(startingPopulation, increasePerYear, newInhabitantsPerYear
 
 
 
+// ----------------------------------------------
+
+// DESCRIPTION:
+// Digital root is the recursive sum of all the digits in a number.
+
+// Given n, take the sum of the digits of n. If that value has more than one digit,
+//  continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
 
+function digitalRoot(n){
+    let stringNum = n.toString();
+    let stringNumArray = [];
+    let sum = 0;
+    if(stringNum.length > 1){
+        let arrEle = stringNum.split('');
+        stringNumArray = [...arrEle];
+    }
+    for(let num of stringNumArray){
+        sum += Number(num);
+    }
+    if(sum.toString().length > 1){
+        sum = digitalRoot(sum);
+    }
+    return sum;
+}
+
+// let number = 1246;
+// let root = digitalRoot(number);
+// console.log(root);
 
 
 
