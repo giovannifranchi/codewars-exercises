@@ -28,6 +28,9 @@ function likes(names){
 
 // likes(names);
 
+
+// ----------------------------------------------
+
 // PANGRAM EXERCISE
 
 // A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" 
@@ -70,7 +73,7 @@ let str = 'The quick brown fox jumps over the lazy dog';
 
 // console.log(checkstr);
 
-
+// ----------------------------------------------
 
 // DESCRIPTION:
 // You might know some pretty large perfect squares. But what about the NEXT one?
@@ -96,6 +99,39 @@ let num = 25;
 
 // let next = findNextSquare(num);
 // console.log(next);
+
+
+// ----------------------------------------------
+
+
+// DESCRIPTION:
+// In a small town the population is p0 = 1000 at the beginning of a year. 
+// The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town.
+// How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+
+const startingPopulation = 1000;
+const increasePerYear = 0.02;
+const newInhabitantsPerYear = 50;
+const endingPopulation = 1200;
+
+
+function howManyYears(startingPopulation, increasePerYear, newInhabitantsPerYear, endingPopulation){
+    let currentPopulation = startingPopulation;
+    let yearsRequired = 0;
+    while(currentPopulation < endingPopulation){
+        currentPopulation = currentPopulation + ((currentPopulation * increasePerYear) + newInhabitantsPerYear);
+        yearsRequired = yearsRequired + 1;
+    }
+    return yearsRequired;
+}
+
+// let years = howManyYears(startingPopulation, increasePerYear, newInhabitantsPerYear, endingPopulation);
+
+// console.log(years);
+
+
+
+
 
 
 
