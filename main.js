@@ -67,7 +67,7 @@ function isPangram(str){
     }
 }
 
-let str = 'The quick brown fox jumps over the lazy dog';
+// let str = 'The quick brown fox jumps over the lazy dog';
 
 // let checkstr = isPangram(str);
 
@@ -95,7 +95,7 @@ function findNextSquare(number){
     }
 }
 
-let num = 25;
+// let num = 25;
 
 // let next = findNextSquare(num);
 // console.log(next);
@@ -180,7 +180,7 @@ function duplicateCount(text){
     for(let char of textArray){
         if(comparisonArray.includes(char)){
             if(!duplicateArray.includes(char)){
-                duplicate = duplicate + 1
+                duplicate = duplicate + 1;
                 duplicateArray.push(char);
             }
         }else {
@@ -191,9 +191,45 @@ function duplicateCount(text){
 }
 
 // let stroo = "aabBcde";
-
 // let result = duplicateCount(stroo);
-
 // console.log(result);
+
+
+
+// ----------------------------------------------
+
+
+
+// DESCRIPTION:
+
+// Take 2 strings s1 and s2 including only letters from a to z. 
+// Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+function longest(s1, s2){
+    const arrayS1 = s1.split('');
+    const arrayS2 = s2.split('');
+    const finalArray = [];
+    arrayS1.forEach((char)=>{
+        if(!finalArray.includes(char)){
+            finalArray.push(char);
+        }
+    });
+    arrayS2.forEach((char)=>{
+        if(!finalArray.includes(char)){
+            finalArray.push(char);
+        }
+    });
+    finalArray.sort();
+    let longest = finalArray.join();
+    return longest;
+}
+
+// let a = "abcdefghijklmnopqrstuvwxyz";
+// let b = "xxxxyyyyabklmopq";
+
+// console.log(longest(a, a));
+
+
+
 
 
