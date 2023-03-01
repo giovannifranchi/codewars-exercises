@@ -299,10 +299,31 @@ function accum2(s){
 }
 
 
-let str = "RqaEzty";
+// let str = "RqaEzty";
 
-console.log(accum2(str));
-
-
+// console.log(accum2(str));
 
 
+// ----------------------------------------------
+
+
+// DESCRIPTION:
+// Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+function moveZeros(arr){
+    const noZerosArr = [];
+    const zerosArr = [];
+    for(let element of arr){
+        if(element === 0){
+            zerosArr.push(element);
+        }else {
+            noZerosArr.push(element);
+        }
+    }
+    const mergedArr = [...noZerosArr, ...zerosArr];
+    return mergedArr;
+}
+
+// const test = [false,1,0,1,2,0,1,3,"a"];
+
+// console.log(moveZeros(test));
