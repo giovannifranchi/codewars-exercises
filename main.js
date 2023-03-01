@@ -231,5 +231,59 @@ function longest(s1, s2){
 
 
 
+// ----------------------------------------------
+
+
+
+// DESCRIPTION:
+
+// This time no story, no theory. The examples below show you how to write function accum:
+
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+
+function accum(str){
+    const arrayString = str.toLowerCase().split('');
+    const finalArray = [];
+    for(let i = 0; i < arrayString.length; i++){
+        if(i === 0){
+            let letter = `${arrayString[i].toUpperCase()}-`;
+            finalArray.push(letter);
+        }else if(i === arrayString.length - 1){
+            let letter = '';
+            for(let j = 0; j <= i; j++){
+                if(j === 0){
+                    letter = arrayString[i].toUpperCase();
+                }else{
+                    letter += arrayString[i];
+                }
+            }  
+            finalArray.push(letter);
+        }else {
+            let letter = '';
+            for(let j = 0; j <= i; j++){
+                if(j === 0){
+                    letter = arrayString[i].toUpperCase();
+                }else{
+                    letter += arrayString[i];
+                }
+            }  
+            letter = `${letter}-`;
+            finalArray.push(letter);
+        }
+    }
+    let finalWord = finalArray.join('');
+    return finalWord;
+}
+
+
+// let str = 'abcd';
+
+// console.log(accum(str));
+
+
 
 
