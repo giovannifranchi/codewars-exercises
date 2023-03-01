@@ -280,9 +280,28 @@ function accum(str){
 }
 
 
-// let str = 'abcd';
+function accum2(s){
+    const wordArray = s.split('');
+    const finalArray = [];
+    for(let i = 0; i < wordArray.length; i++){
+        let word = '';
+        for(let j = 0; j <= i; j++){
+            if(j === 0){
+                word = wordArray[i].toUpperCase();
+            }else{
+                word += wordArray[i];
+            }
+        }
+        finalArray.push(word);
+    }
+    let finalWord = finalArray.join('-');
+    return finalWord;
+}
 
-// console.log(accum(str));
+
+let str = 'abcd';
+
+console.log(accum2(str));
 
 
 
