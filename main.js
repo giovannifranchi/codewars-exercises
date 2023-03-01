@@ -411,3 +411,32 @@ function spinWords(str){
 
 
 // ----------------------------------------------
+
+
+// DESCRIPTION:
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value 
+// next to each other and preserving the original order of elements.
+
+
+function uniqueInOrder(list){
+    const finalArray = [];
+    if(typeof list === 'string'){
+        const listArray = list.split('');
+        for(let i = 0; i < listArray.length; i++){
+            if(listArray[i] !== listArray[i -1]){
+                finalArray.push(listArray[i]);
+            }
+        }
+    }else if(Array.isArray(list)){
+        for(let i = 0; i < list.length; i++){
+            if(list[i] !== list[i -1]){
+                finalArray.push(list[i]);
+            }
+        }
+    }
+    return finalArray;
+}
+
+// let arr = [1,2,2,3,3];
+
+// console.log(uniqueInOrder(arr));
