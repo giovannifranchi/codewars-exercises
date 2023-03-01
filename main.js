@@ -281,7 +281,7 @@ function accum(str){
 
 
 function accum2(s){
-    const wordArray = s.split('');
+    const wordArray = s.toLowerCase().split('');
     const finalArray = [];
     for(let i = 0; i < wordArray.length; i++){
         let word = '';
@@ -299,7 +299,7 @@ function accum2(s){
 }
 
 
-let str = 'abcd';
+let str = "RqaEzty";
 
 console.log(accum2(str));
 
